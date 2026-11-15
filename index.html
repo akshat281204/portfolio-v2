@@ -34,11 +34,21 @@
   h2.has-art:hover .pop .art { animation: none; transform: none; transition: transform .25s ease; }
   @keyframes pop { 0%, 62% { transform: translateY(105%); } 68%, 84% { transform: translateY(0); } 90%, 100% { transform: translateY(105%); } }
   footer { display: flex; align-items: center; flex-wrap: wrap; }
-  @media (prefers-reduced-motion: reduce) { h2.has-art .pop .art { animation: none; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { h2.has-art .pop .art { animation: none; transform: none; } .runner { display: none; } }
   footer { position: relative; margin-top: 6rem; padding-top: 1rem; border-top: 1px solid #ddd; }
   .luffy-sit { position: absolute; right: 10%; top: -78px; height: 80px; pointer-events: none; }
   .luffy-sit .art { display: block; height: 80px; }
   .luffy-sit .band, .luffy-sit .vest { stroke: #c0392b; stroke-width: 2; }
+  .runner { position: fixed; left: 0; bottom: 6px; width: 100%; height: 44px; overflow: hidden; pointer-events: none; z-index: 5; }
+  .run { position: absolute; bottom: 0; left: 0; width: 64px; height: 36px; transform: translateX(-90px); animation: trip 26s linear infinite 2s; }
+  .hop { position: relative; height: 36px; animation: hop 2.6s ease-in-out infinite; }
+  .hop .art { position: absolute; left: 0; bottom: 0; height: 36px; width: auto; }
+  .hop .f1 { animation: step1 .36s steps(1) infinite; }
+  .hop .f2 { animation: step2 .36s steps(1) infinite; }
+  @keyframes step1 { 0% { opacity: 1; } 50% { opacity: 0; } }
+  @keyframes step2 { 0% { opacity: 0; } 50% { opacity: 1; } }
+  @keyframes hop { 0%, 100% { transform: translateY(0); } 15% { transform: translateY(-5px); } 30% { transform: translateY(0); } 55% { transform: translateY(-26px); } 70% { transform: translateY(0); } }
+  @keyframes trip { 0% { transform: translateX(-90px) scaleX(1); } 25% { transform: translateX(calc(100vw + 30px)) scaleX(1); } 25.1% { transform: translateX(calc(100vw + 30px)) scaleX(-1); } 50% { transform: translateX(-90px) scaleX(-1); } 100% { transform: translateX(-90px) scaleX(-1); } }
   .foot-art { height: 34px; vertical-align: middle; margin-right: .5rem; }
   h2 { font-size: 1.1rem; margin: 2.5rem 0 1rem; padding-bottom: .4rem; border-bottom: 1px solid #ddd; }
   h3 { font-size: 1rem; margin: 1.5rem 0 .25rem; }
@@ -122,5 +132,7 @@
   <span class="luffy-sit"><svg class="art sit" viewBox="0 0 80 78" aria-hidden="true"><g transform="rotate(-6 40 18)"><path d="M30 18C29 4 51 4 50 18"/><path class="band" d="M30.4 15.2C36 18 44 18 49.6 15.2"/><ellipse cx="40" cy="19" rx="18" ry="4"/></g><path d="M30 21c0 15 20 15 20 0"/><path d="M34 25q2-2.4 4 0M42 25q2-2.4 4 0"/><path d="M34.5 28.5q5.5 5 11 0z"/><path d="M22 16c-1-4 3-6 6-4l1 4c-2 3-5 4-7 0z"/><path d="M23 19C15 24 13 32 19 38M28 20C23 25 22 31 27 36"/><path class="vest" d="M30 38l-2 20M50 38l2 20"/><path d="M29 38q11 3 22 0M40 40v9"/><path d="M51 38c6 5 8 12 6 20"/><path d="M28 58q12 5 24 0l5 5H23z"/><path d="M23 63C9 62 5 71 14 74l26-3M57 63c14-1 18 8 9 11l-26-3"/><path d="M8 67q2-3 4 0M11 71q2-3 4 0M72 67q-2-3-4 0M69 71q-2-3-4 0"/><path d="M33 72q7 4 14 0"/></svg></span>
 </footer>
 
+<!-- art: cat-runner -->
+<div class="runner" aria-hidden="true"><div class="run"><div class="hop"><svg class="art f1" viewBox="0 0 80 44" aria-hidden="true"><path d="M16 24C20 15 34 14 46 16c6 1 10 5 8 10-2 4-10 4-18 3-8 0-16 1-20-2-2-1-2-2 0-3z"/><circle cx="60" cy="18" r="7"/><path d="M55 13l1-7 5 4M62 10l5-4 .5 7"/><circle class="dot" cx="63" cy="17" r="1.1"/><path d="M66 20l1 .8M68 20.5h5"/><path d="M50 27l11 6 4-1M46 28l8 8 4-1M24 28L11 33l-4-2M28 29L18 38l-4-1"/><path d="M16 24C8 24 4 18 8 12c2-3 5-4 5-8"/></svg><svg class="art f2" viewBox="0 0 80 44" aria-hidden="true"><path d="M16 25C20 16 34 15 46 17c6 1 10 5 8 10-2 4-10 4-18 3-8 0-16 1-20-2-2-1-2-2 0-3z"/><circle cx="60" cy="19" r="7"/><path d="M55 14l1-7 5 4M62 11l5-4 .5 7"/><circle class="dot" cx="63" cy="18" r="1.1"/><path d="M66 21l1 .8M68 21.5h5"/><path d="M48 29l2 7 4 0M52 28l6 4 3-1M24 30l-2 6 4 1M20 28l-6 4-3-2"/><path d="M16 25C8 27 4 21 7 15c2-3 5-4 4-8"/></svg></div></div></div>
 </body>
 </html>
