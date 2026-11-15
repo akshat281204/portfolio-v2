@@ -27,7 +27,6 @@
   h2.has-art .art { height: 36px; margin: -28px 0 -.45rem 1rem; }
   h2.has-art { position: relative; }
   h2.has-art .pop { position: absolute; bottom: 0; display: block; overflow: hidden; height: 26px; }
-  h2.has-art .pop.p1 { right: 14%; }
   h2.has-art .pop.p2 { left: 38%; }
   h2.has-art .pop .art { display: block; height: 26px; margin: 0; transform: translateY(105%); animation: pop 9s ease-in-out infinite; }
   h2.has-art .pop.p2 .art { animation-delay: 4.5s; animation-duration: 11s; }
@@ -56,7 +55,7 @@
   .sleeper .zzz { animation: zzz 3s ease-in-out infinite; }
   @keyframes zzz { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
   .meow { position: relative; display: inline-block; cursor: default; }
-  .meow::after { content: "meow!"; position: absolute; left: 50%; bottom: 100%; transform: translate(-50%, 4px); padding: 1px 8px; border: 1px solid #444; border-radius: 10px; background: #fff; font-size: .8rem; font-weight: 400; font-style: italic; line-height: 1.5; white-space: nowrap; opacity: 0; transition: opacity .15s, transform .15s; pointer-events: none; }
+  .meow::after { content: "meow!"; position: absolute; left: 50%; bottom: 100%; transform: translate(-50%, 4px); padding: 1px 8px; border: 1px solid #444; border-radius: 10px; background: #fff; font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", "Bradley Hand", cursive; font-size: .85rem; font-weight: 400; font-style: normal; line-height: 1.5; white-space: nowrap; opacity: 0; transition: opacity .15s, transform .15s; pointer-events: none; }
   .meow:hover::after, .meow:active::after { opacity: 1; transform: translate(-50%, -2px); }
   .flag-wrap { position: absolute; right: calc(10% + 92px); top: -66px; height: 66px; pointer-events: none; }
   .flag-wrap .art { display: block; height: 66px; }
@@ -93,7 +92,7 @@
 
 <main>
   <section>
-    <h2 class="has-art">Experience <!-- art: cat-peek-experience --><span class="pop p1"><svg class="art" viewBox="0 0 48 24" aria-hidden="true"><path d="M9 24 8 6l8 5M39 24l1-18-8 5"/><path d="M8 24C6 13 14 9 24 9s18 4 16 15"/><circle class="dot" cx="18" cy="18" r="1.3"/><circle class="dot" cx="30" cy="18" r="1.3"/><path d="M23 21l1 1 1-1"/></svg></span></h2>
+    <h2>Experience</h2>
     <h3>Software Development Engineer, Hyperface Technologies</h3>
     <p class="muted"><strong>Jan 2026 – Present</strong> · Bengaluru</p>
     <p>Backend and data infrastructure for fintech products: production services, large-scale data processing, and replication.</p>
