@@ -20,6 +20,13 @@
   }
   a { color: #0a58ca; }
   h1 { font-size: 2rem; margin: 0 0 .5rem; }
+  .art { height: 40px; width: auto; flex: none; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; color: #444; }
+  .art .dot { fill: currentColor; stroke: none; }
+  h1 .art { height: 44px; margin-left: .5rem; vertical-align: -6px; }
+  h2.has-art { display: flex; justify-content: space-between; align-items: flex-end; }
+  h2.has-art .art { height: 36px; margin: -28px 0 -.45rem 1rem; }
+  h2.has-art .chibi { height: 56px; margin-top: -48px; }
+  .foot-art { height: 34px; vertical-align: middle; margin-right: .5rem; }
   h2 { font-size: 1.1rem; margin: 2.5rem 0 1rem; padding-bottom: .4rem; border-bottom: 1px solid #ddd; }
   h3 { font-size: 1rem; margin: 1.5rem 0 .25rem; }
   p, ul { margin: .4rem 0; }
@@ -36,7 +43,7 @@
 <body>
 
 <header>
-  <h1>Akshat Agarwal</h1>
+  <h1>Akshat Agarwal <!-- art: cat-name --><svg class="art" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 11 15 3l6 5M32 11l1-8-6 5"/><circle cx="24" cy="17" r="9"/><path d="M15 25C10 35 12 45 24 45s14-10 9-20M34 41c9 0 10-12 4-13"/><circle class="dot" cx="20.5" cy="17" r="1.2"/><circle class="dot" cx="27.5" cy="17" r="1.2"/><path d="M23 21l1 1 1-1"/></svg></h1>
   <p><strong>Software engineer</strong> in Bengaluru, working on <strong>backend services and data infrastructure</strong> at <a href="https://www.hyperface.co/">Hyperface Technologies</a>.</p>
   <p class="links">
     <a href="mailto:akshat28122004@gmail.com">Email</a>
@@ -57,7 +64,7 @@
   </section>
 
   <section>
-    <h2>Selected work</h2>
+    <h2 class="has-art">Selected work <!-- art: cat-work --><svg class="art" viewBox="0 0 64 36" aria-hidden="true"><path d="M8 18l-1-8 6 4M26 18l1-8-6 4"/><circle cx="17" cy="23" r="9"/><path d="M26 30c6 4 20 4 28 0 8-5 6-14-2-14h-14M54 30c6 2 9-3 6-6"/><path d="M12 23q2 2 4 0M19 23q2 2 4 0M16 27l1 1 1-1"/></svg></h2>
 
     <h3><a href="https://github.com/akshat281204/lakehouse-query-studio">Object-Storage OLAP Query Engine</a></h3>
     <p>A SQL query layer over S3-compatible object storage. Datasets live as partitioned Parquet tables, so analytical queries run directly against object storage, with no warehouse load step.</p>
@@ -84,7 +91,7 @@
   </section>
 
   <section>
-    <h2>Toolkit</h2>
+    <h2 class="has-art">Toolkit <!-- art: chibi-toolkit --><svg class="art chibi" viewBox="0 0 48 60" aria-hidden="true"><path d="M10 24C7 5 41 3 38 24l-4-9-5 6-5-9-5 9-5-6z"/><circle cx="24" cy="29" r="12"/><ellipse class="dot" cx="19" cy="30" rx="2" ry="3.2"/><ellipse class="dot" cx="29" cy="30" rx="2" ry="3.2"/><path d="M14 35h3M31 35h3M22 36q2 2 4 0"/><path d="M14 60V50q10-6 20 0v10M34 52l6-10M38 40l2 3"/></svg></h2>
     <dl>
       <dt>Languages</dt><dd>Java, Go, Python, SQL</dd>
       <dt>Backend</dt><dd>Spring Boot, Resilience4j, REST APIs</dd>
@@ -97,7 +104,7 @@
 </main>
 
 <footer>
-  <p>© 2026 Akshat Agarwal · <a href="mailto:akshat28122004@gmail.com">akshat28122004@gmail.com</a></p>
+  <p><!-- art: cat-footer --><svg class="art foot-art" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 11 15 3l6 5M32 11l1-8-6 5"/><circle cx="24" cy="17" r="9"/><path d="M15 25C10 35 12 45 24 45s14-10 9-20M34 41c9 0 10-12 4-13"/><circle class="dot" cx="20.5" cy="17" r="1.2"/><circle class="dot" cx="27.5" cy="17" r="1.2"/><path d="M23 21l1 1 1-1"/></svg>© 2026 Akshat Agarwal · <a href="mailto:akshat28122004@gmail.com">akshat28122004@gmail.com</a></p>
 </footer>
 
 </body>
