@@ -34,7 +34,7 @@
   h2.has-art:hover .pop .art { animation: none; transform: none; transition: transform .25s ease; }
   @keyframes pop { 0%, 62% { transform: translateY(105%); } 68%, 84% { transform: translateY(0); } 90%, 100% { transform: translateY(105%); } }
   footer { display: flex; align-items: center; flex-wrap: wrap; }
-  @media (prefers-reduced-motion: reduce) { h2.has-art .pop .art,  }
+  @media (prefers-reduced-motion: reduce) { h2.has-art .pop .art { animation: none; transform: none; } }
   footer { position: relative; margin-top: 6rem; padding-top: 1rem; border-top: 1px solid #ddd; }
   .luffy-sit { position: absolute; right: 10%; top: -78px; height: 80px; pointer-events: none; }
   .luffy-sit .art { display: block; height: 80px; }
