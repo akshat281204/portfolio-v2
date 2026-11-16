@@ -100,18 +100,19 @@
   <section>
     <h2 class="has-art">Selected work <!-- art: cat-work --><svg class="art sleeper" viewBox="0 0 64 36" aria-hidden="true"><path d="M8 18l-1-8 6 4M26 18l1-8-6 4"/><circle cx="17" cy="23" r="9"/><path d="M26 30c6 4 20 4 28 0 8-5 6-14-2-14h-14M54 30c6 2 9-3 6-6"/><path class="eyes-closed" d="M12 23q2 2 4 0M19 23q2 2 4 0"/><circle class="dot eyes-open" cx="14" cy="22.5" r="1.4"/><circle class="dot eyes-open" cx="21" cy="22.5" r="1.4"/><path d="M16 27l1 1 1-1"/><path class="zzz" d="M29 8h4l-4 5h4M36 3h3l-3 4h3"/></svg></h2>
 
-    <h3><a href="https://github.com/akshat281204/lakehouse-query-studio">Lakehouse Query Studio</a></h3>
-    <p>A SQL workbench in Go over S3-compatible storage. CSV, JSON and Parquet are ingested into versioned Parquet and queried on single-node DuckDB through a React dashboard.</p>
+    <h3><a href="https://github.com/akshat281204/lakehouse-query-studio">Object-Storage OLAP Query Engine</a></h3>
+    <p>A SQL query layer over S3-compatible object storage. Datasets live as partitioned Parquet tables, so analytical queries run directly against object storage, with no warehouse load step.</p>
     <ul>
-      <li>Sandboxed SQL engine and durable, crash-safe query jobs on PostgreSQL, checked with fault-injection tests.</li>
-      <li>Parquet-statistics file pruning plus a stage cache cut bytes staged by <strong>86–97%</strong> on selective queries over <strong>~6M rows</strong>.</li>
+      <li>Predicate and partition pruning plus metadata caching, designed to cut bytes scanned by <strong>roughly 60%</strong>.</li>
+      <li>Benchmarked over a <strong>100 GB</strong> dataset, targeting <strong>sub-5-second p95 latency</strong> and 20 concurrent queries.</li>
     </ul>
-    <p class="muted">Go · DuckDB · PostgreSQL · S3 · Parquet · React</p>
+    <p class="muted">Go · MinIO / S3 · Parquet · DuckDB</p>
 
     <h3><a href="https://github.com/akshat281204/provisioning-orchestrator">Provisioning Orchestrator</a></h3>
-    <p>A durable Go service that provisions isolated per-team PostgreSQL environments, with credentials in Vault, leases with fencing, and a transactional outbox for webhooks.</p>
+    <p>A durable Go service and REST API that provisions PostgreSQL environments as a six-step workflow, with leases, bounded retries, and state that survives crashes.</p>
     <ul>
-      <li>A seeded chaos test passed <strong>40/40 seeds</strong> across 480 environments and 2,022 injected faults, with no leaked resources.</li>
+      <li>Idempotent operations and <code>in_doubt</code> reconciliation recover ambiguous external-service outcomes without repeating side effects.</li>
+      <li>OpenTelemetry traces, six Prometheus metrics, Grafana dashboards, and ten fault-injection scenarios.</li>
     </ul>
     <p class="muted">Go · PostgreSQL · Vault · OpenTelemetry · Prometheus</p>
   </section>
